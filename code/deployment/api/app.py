@@ -24,7 +24,7 @@ app = FastAPI()
 # Load the trained model
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = ResNetClassificationModel(num_classes=2)
-MODEL_PATH = "model.pth"
+MODEL_PATH = "model.pt"
 checkpoint = torch.load(MODEL_PATH, map_location=device)
 model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
