@@ -5,6 +5,12 @@ Assignment 1 for "Practical Machine Learning and Deep Learning" Innopolis Univer
 
 This project uses a ResNet model to classify images, trained and validated on a dataset of Celeb images.
 
+## Example of working app:<br>
+<div style="display: flex; justify-content: space-between;">
+   <img src="screens/screen_1.png" alt="Example 1" width="500"/>
+   <img src="screens/screen_2.png" alt="Example 2" width="500"/>
+</div>
+
 ## Prerequisites
 - Python 3.x
 - CUDA (optional, for GPU acceleration)
@@ -46,9 +52,3 @@ This project uses a ResNet model to classify images, trained and validated on a 
    ```
 
 5. Make a prediction by uploading an image file.
-
-
-
-## Example of working app:<br>
-<img src="screens/screen_1.png" alt="Example 1" width="400"/>
-<img src="screens/screen_2.png" alt="Example 2" width="400"/>
