@@ -6,6 +6,8 @@ from torchvision.io import read_image
 from torchvision import transforms
 from torch.utils.data import TensorDataset, DataLoader
 import torch.optim as optim
+import os
+os.makedirs("models", exist_ok=True)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -127,7 +129,7 @@ def label_preprocess(img_path):
     # Select label(s) from train_features
     labels = train_features["Blond_Hair"]
     labels.replace(-1, 0, inplace=True)
-    labels = torch.from_numpy(labels.to_numpy()).float()
+    labels = torch.from_numpy(labels.to_numpy()).long() 
     processed_dataset = TensorDataset(images, labels)
     proportion = 0.8
 
@@ -139,7 +141,7 @@ def label_preprocess(img_path):
     batch_size = 64
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size)
-    return train_loader, val_loader, labels, 
+    return train_loader, val_loader, labels
 
 
 
@@ -156,9 +158,9 @@ def main():
     early_stopping = EarlyStopping(patience=5, delta=0.01)
 
     label_counts = pd.Series(labels.numpy()).value_counts()
-    imbalance_ratio = label_counts.min() / label_counts.max()
+    imbalance_ratio = label_counts.max() / label_counts.min()
 
-    class_weights = torch.tensor([1.0, 1/imbalance_ratio]).to(device)  # Add class weights based on the class imbalance
+    class_weights = torch.tensor([1.0, imbalance_ratio], dtype=torch.float).to(device)  # Add class weights based on the class imbalance
     loss_fn = nn.CrossEntropyLoss(weight=class_weights)
     optimizer = optim.Adam(model.parameters(), lr=0.001) 
 
@@ -172,7 +174,7 @@ def main():
         device=device,
         early_stopping=early_stopping
     )
-    torch.save(model.state_dict(), 'models/model.pth')
+    torch.save(model.state_dict(), 'code/deployment/api/model2.pth')
 
 
 if __name__ == '__main__':
