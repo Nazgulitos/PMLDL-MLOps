@@ -7,8 +7,8 @@ This project uses a ResNet model to classify images, trained and validated on a 
 
 ## Example of working app:<br>
 <div style="display: flex; justify-content: space-between;">
-   <img src="screens/screen_1.png" alt="Example 1" width="300"/>
-   <img src="screens/screen_2.png" alt="Example 2" width="300"/>
+   <img src="screens/screen_1.png" alt="Example 1" width="400"/>
+   <img src="screens/screen_2.png" alt="Example 2" width="400"/>
 </div>
 
 ## Prerequisites
