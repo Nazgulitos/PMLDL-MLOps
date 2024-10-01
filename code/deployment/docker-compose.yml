@@ -4,7 +4,6 @@ services:
     container_name: fastapi_model
     ports:
       - "8000:8000"
-    restart: always
 
   app:
     build: ./app
@@ -13,4 +12,3 @@ services:
       - "8501:8501"
     depends_on:
       - api
-    restart: always
