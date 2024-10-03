@@ -151,7 +151,8 @@ def main():
     ckpt = torch.load("models/best.pt", map_location=device)
     model.load_state_dict(ckpt['model_state_dict'])
 
-    img_path = "code/datasets/archive"
+    img_path = "data/archive"
+    
 
     train_loader, val_loader, labels = label_preprocess(img_path)
 
@@ -174,7 +175,7 @@ def main():
         device=device,
         early_stopping=early_stopping
     )
-    torch.save(model.state_dict(), 'code/deployment/api/model2.pth')
+    torch.save(model.state_dict(), 'models/model.pt')
 
 
 if __name__ == '__main__':
