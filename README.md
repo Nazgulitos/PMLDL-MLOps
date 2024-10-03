@@ -38,12 +38,12 @@ This project uses a ResNet model to classify images, trained and validated on a 
    cd code/deployment
    ```
 
-2. Download the model file or train your own model using instructions in [code/models] directory :
+2. Download the model file or train your own model:
 
     2.1. Download the `model.pth` file from the following link:
     [Download model.pth](https://drive.google.com/file/d/1K9t5hI8dZC_foQluOKY1BVETCxP1Yb8c/view?usp=sharing)
 
-    2.2. Place the downloaded `model.pth` file in the [code/deployment/api] directory.
+    2.2. Place the downloaded `model.pth` file in the [models] directory.
 
 3. Run the Docker Compose file:
    ```bash
