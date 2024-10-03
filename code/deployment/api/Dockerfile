@@ -1,12 +1,12 @@
 FROM python:3.9-slim
 
-WORKDIR /app
+WORKDIR /code/deployment/api
 
-COPY requirements.txt /app/requirements.txt
+COPY models ../../../models
+COPY code/deployment/api/requirements.txt .
+COPY code/deployment/api/app.py .
 
 RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . /app
 
 EXPOSE 8000
 
