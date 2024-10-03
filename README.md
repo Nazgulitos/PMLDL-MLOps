@@ -17,8 +17,7 @@ This project uses a ResNet model to classify images, trained and validated on a 
 
 ## Project Structure
 ```
-├── code
-│   ├── datasets          
+├── code   
 │   ├── deployment
 │   │   ├── api             # FastAPI code, Dockerfile
 │   │   └── app             # Streamlit app code, Dockerfile
@@ -27,7 +26,8 @@ This project uses a ResNet model to classify images, trained and validated on a 
 ├── data                    # Dataset directory (need to download)
 ├── models                  # Saved model file (need to download)
 ├── screens                 # Screenshots of working app
-└── README.md               # Instructions to run app
+├── README.md               # Instructions to run app
+└── .gitignore
 ```
 
 ## Setup Instructions
