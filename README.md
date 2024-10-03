@@ -18,12 +18,16 @@ This project uses a ResNet model to classify images, trained and validated on a 
 ## Project Structure
 ```
 ├── code
-│   ├── datasets          # Dataset directory (need to download)
+│   ├── datasets          
 │   ├── deployment
-│   │   ├── api           # FastAPI code, Dockerfile, and saved model (need to download)
-│   │   └── app           # Streamlit app code and Dockerfile
-│   ├── docker-compose.yml # Docker Compose file for both API and web app
-│   └── models            # Script for model training
+│   │   ├── api             # FastAPI code, Dockerfile
+│   │   └── app             # Streamlit app code, Dockerfile
+│   ├── docker-compose.yml  # Docker Compose file for both API and web app
+│   └── models              # Script for model training
+├── data                    # Dataset directory (need to download)
+├── models                  # Saved model file (need to download)
+├── screens                 # Screenshots of working app
+└── README.md               # Instructions to run app
 ```
 
 ## Setup Instructions
