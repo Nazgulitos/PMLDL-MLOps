@@ -54,7 +54,7 @@ async def predict(file: UploadFile = File(...)):
         prediction = predicted.item()
 
     # Map the prediction to class names (assumed 0: Non-Blond, 1: Blond)
-    class_names = ["Brunette", "Blond"]
+    class_names = ["Non-blond", "Blond"]
     predicted_class = class_names[prediction]
     return {"prediction": predicted_class}
 

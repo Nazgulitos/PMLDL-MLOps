@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from PIL import Image
 
-st.title("Blond or Brunnete Hair Classifier")
+st.title("Blond or Non-blond Hair Classifier")
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 

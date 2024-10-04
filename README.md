@@ -1,7 +1,7 @@
 # PMLDL-MLOps
 Assignment 1 for "Practical Machine Learning and Deep Learning" Innopolis University course.
 
-## Blond or Brunette Classification Model Web App using Streamlit and FastAPI
+## Blond or Non-blond Classification Model Web App using Streamlit and FastAPI
 
 This project uses a ResNet model to classify images, trained and validated on a dataset of Celeb images.
 
